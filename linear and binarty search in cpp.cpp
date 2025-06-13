@@ -97,4 +97,5 @@ int main(){
     else{
         std::cout<< "The value "<<arr[index]<< " exists at position "<<index + 1<<std::endl; 
     }
+    return 0;
 }
