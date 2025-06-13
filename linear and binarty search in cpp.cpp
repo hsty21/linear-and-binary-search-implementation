@@ -2,8 +2,11 @@
 #include<limits>
 //function of linear search
 int linearSearch(int arr[], int size, int key){
+    int count = 0;
     for(int i=0;i<size;i++){
+        count++;
         if(arr[i] ==  key){
+            std::cout<< "Loop count: "<<count<<std::endl;
             return i;
         }
     }
@@ -13,22 +16,23 @@ int linearSearch(int arr[], int size, int key){
 int binarySearch(int arr[], int size, int key){
     int start = 0;
     int end = size - 1;
-    int index = (end - start)/2;
+    int index;
     int count = 0;
     while(start<=end){
+        count++;
+        index = start +  (end - start)/2;
         if(arr[index] ==  key){
+            std::cout<< "Loop count: "<<count<<std::endl;
             return index;
         }
-        else if(arr[index] > key){
-            end = index;
-            index = (end - start)/2;
-        }
         else if(arr[index] < key){
-            start = index;
-            index = start + (end - start)/2 + 1;
+            start =  index + 1;
         }
-        count++;
+        else{
+            end = index - 1;
+        }
     }
+    std::cout<< "Loop count: "<<count<<std::endl;
     return -1;
 }
 //function of bubble sort
@@ -93,6 +97,4 @@ int main(){
     else{
         std::cout<< "The value "<<arr[index]<< " exists at position "<<index + 1<<std::endl; 
     }
-    
-    
 }
