@@ -94,6 +94,5 @@ int main(){
         std::cout<< "The value "<<arr[index]<< " exists at position "<<index + 1<<std::endl; 
     }
     
-    index = binarySearch(arr, 10,key);
     
 }
